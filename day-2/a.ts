@@ -7,19 +7,17 @@ const lines = input.split("\r\n");
 const moves = lines.map((line) => line.split(" "));
 let vertical = 0;
 let horizontal = 0;
-let aim = 0
 
 for (const [move, unit] of moves) {
   switch (move) {
     case "forward":
       horizontal += Number(unit);
-      vertical += aim * Number(unit)
       break;
     case "up":
-      aim -= Number(unit);
+      vertical -= Number(unit);
       break;
     case "down":
-      aim += Number(unit);
+      vertical += Number(unit);
       break;
   }
 }
